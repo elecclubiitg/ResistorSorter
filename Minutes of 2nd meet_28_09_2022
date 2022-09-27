@@ -1,0 +1,5 @@
+Expalantion of introduction to openCV and its library functions.
+Covered 2 basic tutorials from the opencv documentations based on operations on images(on two images including resistor)
+Coverting image from RGB to Grey scale version using cvt commond of opencv.
+Edge detection of the grey scale image using sobel filter of openCV library.
+Creating the pull request followed by uploading the google colab to the GitHub repository.
