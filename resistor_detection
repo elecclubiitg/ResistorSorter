@@ -1,0 +1,34 @@
+import cv2
+import numpy as np
+
+lower = np.array([49,48,41])
+upper = np.array([92,255,255])
+
+cap = cv2.VideoCapture(1)
+
+kernal = np.ones((7,7),np.uint8)
+
+while(True):
+    ret,frame = cap.read()
+
+    img = cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
+
+    mask = cv2.inRange(img,lower,upper)
+
+    contours,hierarchy = cv2.findContours(mask.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+
+    output = cv2.drawContours(frame,contours,-1,(0,0,255),3)
+
+
+
+
+    cv2.imshow("mask1",mask)
+    cv2.imshow("webcam",frame)
+    cv2.imshow("HSV",img)
+    cv2.imshow("output",output)
+
+
+
+    cv2.waitKey(1)
+
+
